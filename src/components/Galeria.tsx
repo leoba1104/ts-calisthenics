@@ -69,15 +69,9 @@ export default function Galeria() {
     <section id="galeria" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
 
-        <div className="mb-12">
-          <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted mb-3">Galería</p>
-          <h2 className="font-display text-[clamp(38px,5vw,64px)] leading-[1.02] uppercase tracking-tight mb-4">
-            Vive la academia.
-          </h2>
-          <p className="text-muted text-[15px] max-w-lg leading-relaxed">
-            Entrenamientos, comunidad y momentos reales. Esto es TS Calisthenics.
-          </p>
-        </div>
+        <p className="text-muted text-[15px] max-w-lg leading-relaxed mb-10">
+          Entrenamientos, comunidad y momentos reales. Esto es TS Calisthenics.
+        </p>
 
         <ThumbnailCarousel items={photos} />
 

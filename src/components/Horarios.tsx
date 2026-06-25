@@ -19,17 +19,9 @@ export default function Horarios() {
     <section id="horarios" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
 
-        <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-end mb-14">
-          <div>
-            <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted mb-3">Horarios</p>
-            <h2 className="font-display text-[clamp(38px,5vw,64px)] leading-[1.02] uppercase tracking-tight">
-              Entrená en tu franja.
-            </h2>
-          </div>
-          <p className="text-muted text-[14px] max-w-xs leading-relaxed">
-            Sesiones de una hora. Máximo 8 personas y supervisión 6:1. Elegí coach y horario.
-          </p>
-        </div>
+        <p className="text-muted text-[14px] max-w-xs leading-relaxed mb-10">
+          Sesiones de una hora. Máximo 8 personas y supervisión 6:1. Elegí coach y horario.
+        </p>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {schedule.map(s => (

@@ -72,12 +72,6 @@ export default function AppSection() {
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-[radial-gradient(circle,rgba(255,98,0,0.06)_0%,transparent_70%)] pointer-events-none" />
 
           <div>
-            <span className="inline-block text-[10px] font-bold uppercase tracking-widest text-muted mb-4 border border-border px-3 py-1 rounded-full">
-              TS App
-            </span>
-            <h2 className="font-display text-[clamp(34px,4.5vw,58px)] leading-[1] uppercase tracking-tight mb-5">
-              Reserva tu clase<br />en segundos.
-            </h2>
             <p className="text-muted text-[15px] max-w-md leading-relaxed mb-7">
               Nuestra app te da el control completo de tu entrenamiento: horarios y pagos sin complicaciones.
             </p>
