@@ -56,19 +56,24 @@ const levelColors: Record<string, string> = {
 
 export default function Retos() {
   return (
-    <div id="retos" className="bg-bg py-12 px-3">
-      <div className="max-w-6xl mx-auto px-3">
+    <section id="retos" className="py-20 lg:py-28 bg-surface">
+      <div className="max-w-6xl mx-auto px-6">
 
-        <p className="text-muted text-[14px] leading-relaxed text-right mb-6 hidden md:block">
-          Elegí tu nivel, comprometete y demostrá lo que podés hacer.
-        </p>
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-12">
+          <h2 className="font-display text-[clamp(38px,5vw,64px)] leading-[1] uppercase tracking-tight">
+            Retos que te definen.
+          </h2>
+          <p className="text-muted text-[14px] leading-relaxed sm:text-right sm:max-w-[220px]">
+            Elegí tu nivel, comprometete y demostrá lo que podés hacer.
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {retos.map(r => (
             <div
               key={r.title}
               className={`rounded-[20px] border flex flex-col overflow-hidden ${
-                r.featured ? 'border-accent/40 bg-surface lg:col-span-2' : 'border-border bg-surface'
+                r.featured ? 'border-accent/40 bg-bg lg:col-span-2' : 'border-border bg-bg'
               }`}
             >
               <div className="p-5 pb-3">
@@ -127,6 +132,6 @@ export default function Retos() {
         </div>
 
       </div>
-    </div>
+    </section>
   )
 }

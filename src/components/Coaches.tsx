@@ -40,8 +40,15 @@ const coaches = [
 
 export default function Coaches() {
   return (
-    <div id="coaches" className="bg-bg py-16 px-3">
-      <div className="max-w-6xl mx-auto px-3">
+    <section id="coaches" className="py-20 lg:py-28">
+      <div className="max-w-6xl mx-auto px-6">
+
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-4">
+          <h2 className="font-display text-[clamp(38px,5vw,64px)] leading-[1] uppercase tracking-tight">
+            Coaches que entrenan contigo.
+          </h2>
+          <p className="text-muted text-[13px] sm:pb-1 flex-shrink-0">3 certificados</p>
+        </div>
 
         <p className="text-muted text-[15px] max-w-xl leading-relaxed mb-10">
           Cada coach es un atleta activo y certificado. Pasá el cursor para conocerlos.
@@ -130,6 +137,6 @@ export default function Coaches() {
         </div>
 
       </div>
-    </div>
+    </section>
   )
 }

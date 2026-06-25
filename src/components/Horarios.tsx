@@ -16,12 +16,17 @@ const schedule = [
 
 export default function Horarios() {
   return (
-    <section id="horarios" className="py-24">
+    <section id="horarios" className="py-20 lg:py-28 bg-surface">
       <div className="max-w-6xl mx-auto px-6">
 
-        <p className="text-muted text-[14px] max-w-xs leading-relaxed mb-10">
-          Sesiones de una hora. Máximo 8 personas y supervisión 6:1. Elegí coach y horario.
-        </p>
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-10">
+          <h2 className="font-display text-[clamp(38px,5vw,64px)] leading-[1] uppercase tracking-tight">
+            Entrená en tu franja.
+          </h2>
+          <p className="text-muted text-[14px] sm:max-w-[220px] sm:text-right leading-relaxed">
+            Sesiones de una hora. Máximo 8 personas.
+          </p>
+        </div>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
           {schedule.map(s => (

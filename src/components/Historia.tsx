@@ -16,8 +16,15 @@ const hitos = [
 
 export default function Historia() {
   return (
-    <div id="historia" className="bg-bg py-16 px-3">
-      <div className="max-w-6xl mx-auto px-3">
+    <section id="historia" className="py-20 lg:py-28">
+      <div className="max-w-6xl mx-auto px-6">
+
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-14">
+          <h2 className="font-display text-[clamp(38px,5vw,64px)] leading-[1] uppercase tracking-tight">
+            Nació en un parque.
+          </h2>
+          <p className="text-muted text-[13px] tracking-wide sm:pb-1">Desde 2018</p>
+        </div>
 
         {/* image + copy + stats */}
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
@@ -67,6 +74,6 @@ export default function Historia() {
         </div>
 
       </div>
-    </div>
+    </section>
   )
 }

@@ -8,9 +8,10 @@ export default function CtaFinal() {
         <div className="w-full bg-surface border border-border rounded-[28px] px-8 py-16 text-center relative overflow-hidden">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-[radial-gradient(ellipse,rgba(255,98,0,0.08)_0%,transparent_70%)] pointer-events-none" />
 
-          <p className="font-display text-[clamp(28px,3vw,40px)] text-accent uppercase tracking-tight mb-4 relative">
-            Empezá hoy.
-          </p>
+          <h2 className="font-display text-[clamp(52px,8vw,96px)] leading-[0.93] uppercase tracking-tight mb-5 relative">
+            Fuerza que<br />
+            <em className="text-accent not-italic">transforma.</em>
+          </h2>
 
           <p className="text-muted text-[16px] max-w-md mx-auto leading-relaxed mb-10 relative">
             Sin excusas, sin máquinas. Empezá tu camino en TS Calisthenics Academy y descubrí lo que tu cuerpo puede hacer.

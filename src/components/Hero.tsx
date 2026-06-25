@@ -2,7 +2,7 @@ import murph from '../../assets/murph.png'
 
 export default function Hero() {
   return (
-    <section className="snap-start h-screen w-screen flex items-center pt-24 pb-16 relative overflow-hidden">
+    <section className="min-h-screen flex items-center pt-24 pb-16 relative overflow-hidden">
       {/* background image */}
       <div className="absolute inset-0">
         <img

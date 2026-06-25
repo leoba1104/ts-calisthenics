@@ -66,12 +66,17 @@ const photos: CarouselItem[] = [
 
 export default function Galeria() {
   return (
-    <section id="galeria" className="py-24">
+    <section id="galeria" className="py-20 lg:py-28 bg-surface">
       <div className="max-w-6xl mx-auto px-6">
 
-        <p className="text-muted text-[15px] max-w-lg leading-relaxed mb-10">
-          Entrenamientos, comunidad y momentos reales. Esto es TS Calisthenics.
-        </p>
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-10">
+          <h2 className="font-display text-[clamp(38px,5vw,64px)] leading-[1] uppercase tracking-tight">
+            Vive la academia.
+          </h2>
+          <p className="text-muted text-[14px] sm:max-w-[220px] leading-relaxed sm:text-right">
+            Entrenamientos, comunidad y momentos reales.
+          </p>
+        </div>
 
         <ThumbnailCarousel items={photos} />
 

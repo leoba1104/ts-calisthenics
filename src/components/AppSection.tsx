@@ -65,8 +65,15 @@ function QRCode() {
 
 export default function AppSection() {
   return (
-    <section id="app" className="py-24">
+    <section id="app" className="py-20 lg:py-28">
       <div className="max-w-6xl mx-auto px-6">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3 mb-10">
+          <h2 className="font-display text-[clamp(38px,5vw,64px)] leading-[1] uppercase tracking-tight">
+            Reservá tu clase<br className="hidden sm:block" /> en segundos.
+          </h2>
+          <p className="text-muted text-[13px] sm:pb-1 flex-shrink-0">TS App</p>
+        </div>
+
         <div className="bg-surface border border-border rounded-[28px] px-10 py-14 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 items-center relative overflow-hidden">
           {/* glow */}
           <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-[radial-gradient(circle,rgba(255,98,0,0.06)_0%,transparent_70%)] pointer-events-none" />

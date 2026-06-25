@@ -93,7 +93,16 @@ function TestimonialCard({
 
 export default function Testimonios() {
   return (
-    <section className="py-24">
+    <section className="py-20 lg:py-28">
+      <div className="max-w-6xl mx-auto px-6 mb-12">
+        <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
+          <h2 className="font-display text-[clamp(38px,5vw,64px)] leading-[1] uppercase tracking-tight">
+            Lo que dicen los<br />que entrenan.
+          </h2>
+          <p className="text-muted text-[13px] sm:pb-1 flex-shrink-0">+200 reseñas</p>
+        </div>
+      </div>
+
       {/* 3D marquee container */}
       <div className="relative flex h-96 w-full items-center justify-center overflow-hidden [perspective:300px]">
         <div
