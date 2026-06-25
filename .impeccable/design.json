@@ -1,0 +1,258 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-25T00:00:00Z",
+  "title": "Design System: TS Calisthenics Academy",
+  "extensions": {
+    "colorMeta": {
+      "industrial-flame": {
+        "role": "primary",
+        "displayName": "Llama Industrial",
+        "canonical": "oklch(64% 0.22 38)",
+        "tonalRamp": [
+          "oklch(20% 0.07 38)",
+          "oklch(30% 0.12 38)",
+          "oklch(40% 0.16 38)",
+          "oklch(50% 0.20 38)",
+          "oklch(60% 0.22 38)",
+          "oklch(70% 0.18 38)",
+          "oklch(80% 0.13 38)",
+          "oklch(90% 0.07 38)"
+        ]
+      },
+      "industrial-flame-deep": {
+        "role": "primary-dark",
+        "displayName": "Llama Profunda",
+        "canonical": "oklch(54% 0.19 38)",
+        "tonalRamp": [
+          "oklch(15% 0.06 38)",
+          "oklch(25% 0.10 38)",
+          "oklch(35% 0.14 38)",
+          "oklch(45% 0.17 38)",
+          "oklch(54% 0.19 38)",
+          "oklch(64% 0.17 38)",
+          "oklch(74% 0.12 38)",
+          "oklch(86% 0.06 38)"
+        ]
+      },
+      "abyss": {
+        "role": "neutral-bg",
+        "displayName": "Abismo",
+        "canonical": "oklch(8% 0.001 250)",
+        "tonalRamp": [
+          "oklch(8% 0 0)",
+          "oklch(14% 0 0)",
+          "oklch(20% 0 0)",
+          "oklch(30% 0 0)",
+          "oklch(42% 0 0)",
+          "oklch(57% 0 0)",
+          "oklch(72% 0 0)",
+          "oklch(88% 0 0)"
+        ]
+      },
+      "surface-1": {
+        "role": "neutral-surface",
+        "displayName": "Superficie 1",
+        "canonical": "oklch(12% 0.001 250)",
+        "tonalRamp": [
+          "oklch(8% 0 0)",
+          "oklch(12% 0 0)",
+          "oklch(18% 0 0)",
+          "oklch(26% 0 0)",
+          "oklch(38% 0 0)",
+          "oklch(54% 0 0)",
+          "oklch(70% 0 0)",
+          "oklch(86% 0 0)"
+        ]
+      },
+      "surface-2": {
+        "role": "neutral-surface-2",
+        "displayName": "Superficie 2",
+        "canonical": "oklch(17% 0.001 250)",
+        "tonalRamp": [
+          "oklch(10% 0 0)",
+          "oklch(17% 0 0)",
+          "oklch(24% 0 0)",
+          "oklch(33% 0 0)",
+          "oklch(45% 0 0)",
+          "oklch(58% 0 0)",
+          "oklch(72% 0 0)",
+          "oklch(87% 0 0)"
+        ]
+      },
+      "boundary": {
+        "role": "neutral-border",
+        "displayName": "Frontera",
+        "canonical": "oklch(24% 0.001 250)",
+        "tonalRamp": [
+          "oklch(12% 0 0)",
+          "oklch(18% 0 0)",
+          "oklch(24% 0 0)",
+          "oklch(34% 0 0)",
+          "oklch(47% 0 0)",
+          "oklch(60% 0 0)",
+          "oklch(74% 0 0)",
+          "oklch(88% 0 0)"
+        ]
+      },
+      "ash": {
+        "role": "neutral-muted",
+        "displayName": "Ceniza",
+        "canonical": "oklch(61% 0 0)",
+        "tonalRamp": [
+          "oklch(15% 0 0)",
+          "oklch(25% 0 0)",
+          "oklch(35% 0 0)",
+          "oklch(45% 0 0)",
+          "oklch(55% 0 0)",
+          "oklch(65% 0 0)",
+          "oklch(75% 0 0)",
+          "oklch(88% 0 0)"
+        ]
+      },
+      "coal": {
+        "role": "neutral-sub",
+        "displayName": "Carbón",
+        "canonical": "oklch(40% 0 0)",
+        "tonalRamp": [
+          "oklch(10% 0 0)",
+          "oklch(18% 0 0)",
+          "oklch(28% 0 0)",
+          "oklch(38% 0 0)",
+          "oklch(50% 0 0)",
+          "oklch(62% 0 0)",
+          "oklch(76% 0 0)",
+          "oklch(90% 0 0)"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display Hero", "purpose": "Hero section H1 and final CTA H2 only. The declaration of intent." },
+      "headline": { "displayName": "Section Headline", "purpose": "Section-level H2s. Coaches grid, Historia, Retos featured title." },
+      "title": { "displayName": "Card Title", "purpose": "Card-level H3s and featured challenge names." },
+      "body": { "displayName": "Body", "purpose": "Descriptions, bios, paragraph content. Cap at 65ch." },
+      "label": { "displayName": "Label", "purpose": "Technical metadata: coach IDs, certifications, reps, schedule slots. Not section kickers." }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "flip-card",
+        "value": "transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1)",
+        "purpose": "Coach card 3D Y-axis rotation. The only 3D transform in the system."
+      },
+      {
+        "name": "button-lift",
+        "value": "transform 150ms ease, background-color 150ms ease",
+        "purpose": "All buttons. Translates -2px on hover. No bounce, no spring."
+      },
+      {
+        "name": "marquee-scroll",
+        "value": "translateY(calc(-100% - var(--gap))) linear infinite",
+        "purpose": "Testimonials vertical marquee. Pause on hover."
+      },
+      {
+        "name": "ease-standard",
+        "value": "cubic-bezier(0.4, 0, 0.2, 1)",
+        "purpose": "Default easing for state transitions where no specific curve is defined."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Acción principal. Reservar clase, inscribirse al reto, empezar ahora.",
+      "html": "<button class=\"ds-btn-primary\">Reservar primera clase <svg width=\"16\" height=\"16\" fill=\"none\" viewBox=\"0 0 24 24\" stroke=\"currentColor\" stroke-width=\"2.5\"><path stroke-linecap=\"round\" stroke-linejoin=\"round\" d=\"M17 8l4 4m0 0l-4 4m4-4H3\"/></svg></button>",
+      "css": ".ds-btn-primary { display: inline-flex; align-items: center; gap: 8px; background-color: #FF6200; color: #ffffff; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 14px; padding: 14px 28px; border-radius: 9999px; border: none; cursor: pointer; transition: background-color 150ms ease, transform 150ms ease; text-decoration: none; letter-spacing: 0.01em; } .ds-btn-primary:hover { background-color: #cc4e00; transform: translateY(-2px); } .ds-btn-primary:focus-visible { outline: 2px solid #FF6200; outline-offset: 3px; }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Acción secundaria. Ver horarios, cancelar.",
+      "html": "<button class=\"ds-btn-ghost\">Ver horarios</button>",
+      "css": ".ds-btn-ghost { display: inline-flex; align-items: center; gap: 8px; background-color: transparent; color: #ffffff; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 14px; padding: 14px 28px; border-radius: 9999px; border: 1px solid rgba(255,255,255,0.2); cursor: pointer; transition: border-color 150ms ease, transform 150ms ease; text-decoration: none; } .ds-btn-ghost:hover { border-color: rgba(255,255,255,0.4); transform: translateY(-2px); } .ds-btn-ghost:focus-visible { outline: 2px solid #FF6200; outline-offset: 3px; }"
+    },
+    {
+      "name": "Chip Neutral",
+      "kind": "chip",
+      "refersTo": "chip-neutral",
+      "description": "Tags de categoría sin acción: especialidades, niveles de reto.",
+      "html": "<span class=\"ds-chip-neutral\">Street Workout</span>",
+      "css": ".ds-chip-neutral { display: inline-block; background-color: #1a1a1a; color: #888888; border: 1px solid #2a2a2a; border-radius: 6px; padding: 4px 10px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Chip Accent",
+      "kind": "chip",
+      "refersTo": "chip-accent",
+      "description": "Estado activo, tags seleccionadas, datos de marca.",
+      "html": "<span class=\"ds-chip-accent\">Avanzado</span>",
+      "css": ".ds-chip-accent { display: inline-block; background-color: rgba(255,98,0,0.10); color: #FF6200; border: 1px solid rgba(255,98,0,0.20); border-radius: 6px; padding: 4px 10px; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 10px; letter-spacing: 0.12em; text-transform: uppercase; }"
+    },
+    {
+      "name": "Card",
+      "kind": "card",
+      "refersTo": "card",
+      "description": "Container estándar de contenido. Secciones de retos, app info.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">Reto del Mes</h3><p class=\"ds-card-body\">Completá todos los ejercicios en una sola sesión.</p></div>",
+      "css": ".ds-card { background-color: #111111; border: 1px solid #2a2a2a; border-radius: 20px; padding: 20px; } .ds-card-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; line-height: 1; letter-spacing: -0.01em; text-transform: uppercase; color: #ffffff; margin: 0 0 8px 0; } .ds-card-body { font-family: 'Inter', sans-serif; font-size: 13px; line-height: 1.5; color: #888888; margin: 0; }"
+    },
+    {
+      "name": "Nav",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Barra de navegación fija con efecto glass. Servicio, no decoración.",
+      "html": "<nav class=\"ds-nav\"><a href=\"#\" class=\"ds-nav-brand\">TS Calisthenics</a><ul class=\"ds-nav-links\"><li><a href=\"#historia\" class=\"ds-nav-link\">Historia</a></li><li><a href=\"#coaches\" class=\"ds-nav-link\">Coaches</a></li></ul></nav>",
+      "css": ".ds-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 50; background-color: rgba(10,10,10,0.8); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px); border-bottom: 1px solid #2a2a2a; padding: 0 24px; display: flex; align-items: center; justify-content: space-between; height: 64px; } .ds-nav-brand { font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.05em; text-transform: uppercase; color: #ffffff; text-decoration: none; } .ds-nav-links { display: flex; gap: 24px; list-style: none; margin: 0; padding: 0; } .ds-nav-link { font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 500; color: #888888; text-decoration: none; transition: color 150ms; } .ds-nav-link:hover { color: #ffffff; }"
+    },
+    {
+      "name": "Live Badge",
+      "kind": "chip",
+      "refersTo": "chip-accent",
+      "description": "Badge pulsante de estado activo. Hero section y reto actual.",
+      "html": "<span class=\"ds-live-badge\"><span class=\"ds-live-dot\"></span>+6 años transformando vidas</span>",
+      "css": ".ds-live-badge { display: inline-flex; align-items: center; gap: 8px; padding: 4px 12px; border-radius: 9999px; background-color: rgba(255,98,0,0.15); border: 1px solid rgba(255,98,0,0.30); font-family: 'Inter', sans-serif; font-size: 11px; font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase; color: #FF6200; } .ds-live-dot { width: 6px; height: 6px; border-radius: 50%; background-color: #FF6200; animation: live-pulse 1.5s ease-in-out infinite; flex-shrink: 0; } @keyframes live-pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } } @media (prefers-reduced-motion: reduce) { .ds-live-dot { animation: none; } }"
+    }
+  ],
+  "narrative": {
+    "northStar": "La Calle Como Gimnasio",
+    "overview": "El asfalto es el escenario. La barra de metal frío a las 7 de la mañana. El cuerpo como única máquina disponible. Este sistema visual no es una marca de gym — es una convocatoria. El negro profundo absorbe la luz como el hormigón antes del amanecer. El naranja industrial estalla con la selectividad de una señal de obra, no de una decoración.\n\nLa tipografía Bebas Neue se comporta como stencil sobre concreto: mayúscula, condensada, sin pedir permiso. Inter la acompaña en los textos funcionales con la precisión de alguien que sabe lo que hace. No hay ornamentos. No hay glassmorphism decorativo. No hay gradientes. La jerarquía emerge del contraste de masa tipográfica y de la escasez calculada del naranja.\n\nLas interacciones tienen peso propio. Un hover no es una animación — es una resistencia física.",
+    "keyCharacteristics": [
+      "Superficie negra que absorbe, no refleja — profundidad por capas tonales, no por sombras",
+      "Un solo acento cromático: usado como señal de acción, nunca como decoración de fondo",
+      "Tipografía display que habla en mayúsculas porque el entrenamiento no susurra",
+      "Interacciones con masa — no bounce, no elastic, no spring",
+      "Fotografía real de atletas reales; el stock photography está prohibido"
+    ],
+    "rules": [
+      { "name": "La Regla de La Señal", "body": "El naranja Industrial ocupa menos del 10% de cualquier pantalla. Su rareza es el punto. Si empieza a verse en fondos de sección, banners, o bordes decorativos, el sistema se rompe.", "section": "colors" },
+      { "name": "La Regla de Carbón", "body": "El color coal (#555555) no pasa WCAG AA para texto cuerpo (<18px regular). Usarlo solo para etiquetas de tamaño ≥18px o en negrita ≥14px, o en contextos puramente ornamentales como un ID de coach.", "section": "colors" },
+      { "name": "La Regla de Las Mayúsculas", "body": "Bebas Neue es uppercase por naturaleza. Nunca se usa como titular en sentence case o título case — eso no existe en este sistema. Si el copy tiene que susurrar, usa Inter.", "section": "typography" },
+      { "name": "La Regla de la Escala", "body": "El techo del clamp es 96px (6rem). Más grande que eso no es diseño, es un grito. El piso del display es 56px — por debajo de ese tamaño, perder la masa tipográfica de Bebas Neue no justifica su uso sobre Inter.", "section": "typography" },
+      { "name": "La Regla del Piso Plano", "body": "Ninguna tarjeta, lista o sección usa box-shadow. El apilamiento de superficies tonales (S1 sobre Abismo, S2 dentro de S1) es suficiente para la profundidad. Un box-shadow en este sistema dice 'UI de 2016', no 'calle antes del amanecer'.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do reservar el naranja Industrial para acciones de primer nivel (CTA principal, estado activo, badge 'Reto del mes'). Su escasez es lo que hace que esas acciones se sientan urgentes.",
+      "Do usar fotografía real de los atletas y coaches. El sistema necesita cuerpos reales para sostener 'La Calle Como Gimnasio'.",
+      "Do elevar los botones exactamente translateY(-2px) en hover. No 4px (demasiado), no 1px (imperceptible).",
+      "Do usar prefers-reduced-motion: reduce en todos los flip cards y marquees.",
+      "Do escalar Bebas Neue solo dentro del rango clamp(32px, 4vw, 96px).",
+      "Do limitar la profundidad de cards a dos niveles: Surface-1 que contiene Surface-2. Nunca tres."
+    ],
+    "donts": [
+      "Don't usar colores de cadenas de gym corporativas (azul/rojo genérico estilo SmartFit, Megatlón, Gold's Gym).",
+      "Don't agregar pasteles, cursiva motivacional, ni tonos wellness/yoga. Ese es el anti-mundo exacto de este sistema.",
+      "Don't usar background-clip: text con gradients para el texto. El naranja va sólido o no va.",
+      "Don't poner una etiqueta uppercase pequeña sobre CADA sección ('HISTORIA', 'RETOS', 'COACHES' como kickers). Uno o dos usos es un sistema; en cada sección es gramática de AI.",
+      "Don't usar box-shadow para profundidad. El sistema es tonal, no sombreado.",
+      "Don't usar border-left de color como acento de cards o listas. Nunca.",
+      "Don't comprimir el flip card de coaches por debajo de 480px de altura.",
+      "Don't agregar glassmorphism a elementos que no sean la nav."
+    ]
+  }
+}
