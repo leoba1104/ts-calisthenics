@@ -1,3 +1,5 @@
+import { useState } from 'react'
+
 const retos = [
   {
     tag: 'Activo',
@@ -47,11 +49,91 @@ const retos = [
 ]
 
 const levelColors: Record<string, string> = {
-  'Principiante': 'bg-green-500/10 text-green-400 border-green-500/20',
-  'Intermedio':   'bg-blue-500/10 text-blue-400 border-blue-500/20',
+  'Principiante': 'bg-green-500/10  text-green-400  border-green-500/20',
+  'Intermedio':   'bg-blue-500/10   text-blue-400   border-blue-500/20',
   'Avanzado':     'bg-orange-500/10 text-orange-400 border-orange-500/20',
-  'Élite':        'bg-red-500/10 text-red-400 border-red-500/20',
-  'Todos':        'bg-surface2 text-muted border-border',
+  'Élite':        'bg-red-500/10    text-red-400    border-red-500/20',
+  'Todos':        'bg-surface2      text-muted      border-border',
+}
+
+const levelTabActive: Record<string, string> = {
+  'Principiante': 'bg-green-500/15  text-green-300',
+  'Intermedio':   'bg-blue-500/15   text-blue-300',
+  'Avanzado':     'bg-orange-500/15 text-orange-300',
+  'Élite':        'bg-red-500/15    text-red-300',
+}
+
+type Reto = (typeof retos)[0]
+
+function RetoCard({ r }: { r: Reto }) {
+  const [active, setActive] = useState(r.levels[0])
+
+  const visible = r.exercises.filter(
+    ex => ex.nivel === active || ex.nivel === 'Todos'
+  )
+
+  return (
+    <div className={`rounded-[20px] border flex flex-col overflow-hidden h-full ${
+      r.featured ? 'border-accent/40 bg-bg' : 'border-border bg-bg'
+    }`}>
+      <div className="p-5 pb-4">
+        {/* tag row */}
+        <div className="flex items-center justify-between mb-3">
+          <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md ${r.tagColor}`}>
+            {r.tag}
+          </span>
+          {r.featured && (
+            <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-accent/10 text-accent border border-accent/20">
+              Reto del mes
+            </span>
+          )}
+        </div>
+
+        <h3 className={`font-display uppercase tracking-tight leading-none mb-1 ${r.featured ? 'text-[28px]' : 'text-[22px]'}`}>
+          {r.title}
+        </h3>
+        <p className="text-muted text-[12px] leading-snug mb-4">{r.description}</p>
+
+        {/* level tabs */}
+        <div className="flex gap-0.5 bg-surface border border-border rounded-[10px] p-1">
+          {r.levels.map(l => (
+            <button
+              key={l}
+              onClick={() => setActive(l)}
+              className={`flex-1 text-[10px] font-bold uppercase tracking-wider py-1.5 px-1 rounded-[7px] transition-all duration-150 ${
+                active === l
+                  ? (levelTabActive[l] ?? 'bg-white/10 text-white')
+                  : 'text-sub hover:text-muted'
+              }`}
+            >
+              {l}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* exercises */}
+      <div className="mx-4 mb-4 bg-surface rounded-[12px] border border-border overflow-hidden flex-1">
+        {visible.length > 0 ? visible.map((ex, i) => (
+          <div
+            key={ex.name}
+            className={`flex items-center justify-between px-3 py-2.5 ${
+              i < visible.length - 1 ? 'border-b border-border' : ''
+            }`}
+          >
+            <span className="text-[12px] font-medium">{ex.name}</span>
+            <span className={`text-[10px] font-bold font-mono ${levelColors[active]?.split(' ')[1] ?? 'text-muted'}`}>
+              {ex.reps}
+            </span>
+          </div>
+        )) : (
+          <p className="text-sub text-[12px] text-center px-4 py-6">
+            Sin ejercicios para este nivel
+          </p>
+        )}
+      </div>
+    </div>
+  )
 }
 
 export default function Retos() {
@@ -70,63 +152,8 @@ export default function Retos() {
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {retos.map(r => (
-            <div
-              key={r.title}
-              className={`rounded-[20px] border flex flex-col overflow-hidden ${
-                r.featured ? 'border-accent/40 bg-bg lg:col-span-2' : 'border-border bg-bg'
-              }`}
-            >
-              <div className="p-5 pb-3">
-                <div className="flex items-center justify-between mb-3">
-                  <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md ${r.tagColor}`}>
-                    {r.tag}
-                  </span>
-                  {r.featured && (
-                    <span className="text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md bg-accent/10 text-accent border border-accent/20">
-                      Reto del mes
-                    </span>
-                  )}
-                </div>
-                <h3 className={`font-display uppercase tracking-tight leading-none mb-1 ${r.featured ? 'text-[28px]' : 'text-[22px]'}`}>
-                  {r.title}
-                </h3>
-                <p className="text-muted text-[12px] leading-snug mb-3">{r.description}</p>
-                <div className="flex flex-wrap gap-1">
-                  {r.levels.map(l => (
-                    <span key={l} className={`text-[9px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full border ${levelColors[l] ?? ''}`}>
-                      {l}
-                    </span>
-                  ))}
-                </div>
-              </div>
-
-              <div className="mx-4 mb-4 bg-surface2 rounded-[12px] border border-border overflow-hidden flex-1">
-                {r.exercises.map((ex, i) => (
-                  <div
-                    key={ex.name}
-                    className={`flex items-center justify-between px-3 py-2 ${i < r.exercises.length - 1 ? 'border-b border-border' : ''}`}
-                  >
-                    <span className="text-[12px] font-medium">{ex.name}</span>
-                    <div className="flex items-center gap-1.5">
-                      <span className="text-[11px] text-muted">{ex.reps}</span>
-                      <span className={`text-[9px] font-bold uppercase tracking-wider px-1.5 py-0.5 rounded border ${levelColors[ex.nivel] ?? ''}`}>
-                        {ex.nivel}
-                      </span>
-                    </div>
-                  </div>
-                ))}
-              </div>
-
-              {r.featured && (
-                <div className="px-4 pb-4">
-                  <a
-                    href="#cta"
-                    className="flex items-center justify-center gap-2 bg-accent hover:bg-accent-dim text-white font-bold py-3 rounded-full text-[13px] transition-colors"
-                  >
-                    Inscribirse al reto →
-                  </a>
-                </div>
-              )}
+            <div key={r.title} className={r.featured ? 'lg:col-span-2' : ''}>
+              <RetoCard r={r} />
             </div>
           ))}
         </div>
