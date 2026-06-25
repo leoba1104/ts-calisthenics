@@ -16,7 +16,7 @@ const schedule = [
 
 export default function Horarios() {
   return (
-    <section id="horarios" className="snap-start h-screen w-screen overflow-y-auto flex flex-col justify-center py-16">
+    <section id="horarios" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="grid grid-cols-1 md:grid-cols-[1fr_auto] gap-6 items-end mb-14">

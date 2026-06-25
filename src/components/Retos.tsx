@@ -56,21 +56,12 @@ const levelColors: Record<string, string> = {
 
 export default function Retos() {
   return (
-    <section id="retos" className="snap-start h-screen w-screen overflow-y-auto flex flex-col justify-center py-16">
-      <div className="max-w-6xl mx-auto px-6 w-full">
+    <div id="retos" className="bg-bg py-12 px-3">
+      <div className="max-w-6xl mx-auto px-3">
 
-        {/* header */}
-        <div className="flex items-end justify-between mb-8">
-          <div>
-            <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted mb-2">Desafíos</p>
-            <h2 className="font-display text-[clamp(32px,4vw,52px)] leading-none uppercase tracking-tight">
-              Retos que <span className="text-accent">te definen.</span>
-            </h2>
-          </div>
-          <p className="hidden md:block text-muted text-[13px] max-w-xs leading-relaxed text-right">
-            Elegí tu nivel, comprometete y demostrá lo que podés hacer.
-          </p>
-        </div>
+        <p className="text-muted text-[14px] leading-relaxed text-right mb-6 hidden md:block">
+          Elegí tu nivel, comprometete y demostrá lo que podés hacer.
+        </p>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
           {retos.map(r => (
@@ -80,7 +71,6 @@ export default function Retos() {
                 r.featured ? 'border-accent/40 bg-surface lg:col-span-2' : 'border-border bg-surface'
               }`}
             >
-              {/* card header */}
               <div className="p-5 pb-3">
                 <div className="flex items-center justify-between mb-3">
                   <span className={`text-[10px] font-bold uppercase tracking-wider px-2.5 py-1 rounded-md ${r.tagColor}`}>
@@ -105,7 +95,6 @@ export default function Retos() {
                 </div>
               </div>
 
-              {/* exercise list */}
               <div className="mx-4 mb-4 bg-surface2 rounded-[12px] border border-border overflow-hidden flex-1">
                 {r.exercises.map((ex, i) => (
                   <div
@@ -123,7 +112,6 @@ export default function Retos() {
                 ))}
               </div>
 
-              {/* cta solo en featured */}
               {r.featured && (
                 <div className="px-4 pb-4">
                   <a
@@ -139,6 +127,6 @@ export default function Retos() {
         </div>
 
       </div>
-    </section>
+    </div>
   )
 }

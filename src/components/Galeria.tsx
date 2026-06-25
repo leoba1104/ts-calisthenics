@@ -66,7 +66,7 @@ const photos: CarouselItem[] = [
 
 export default function Galeria() {
   return (
-    <section id="galeria" className="snap-start h-screen w-screen overflow-y-auto py-24">
+    <section id="galeria" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
 
         <div className="mb-12">

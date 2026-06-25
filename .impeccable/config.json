@@ -1,0 +1,14 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "overused-font",
+        "value": "inter",
+        "reason": "Pareja intencional con Bebas Neue: contraste condensado-display vs humanist-sans, documentado en DESIGN.md",
+        "createdAt": "2026-06-25T21:20:30.333Z"
+      }
+    ]
+  }
+}

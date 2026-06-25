@@ -16,19 +16,11 @@ const hitos = [
 
 export default function Historia() {
   return (
-    <section id="historia" className="snap-start h-screen w-screen overflow-y-auto py-24">
-      <div className="max-w-6xl mx-auto px-6">
+    <div id="historia" className="bg-bg py-16 px-3">
+      <div className="max-w-6xl mx-auto px-3">
 
-        <div className="mb-16">
-          <p className="text-[11px] font-bold tracking-[0.12em] uppercase text-muted mb-3">Nuestra historia</p>
-          <h2 className="font-display text-[clamp(38px,5vw,64px)] leading-[1.02] uppercase tracking-tight">
-            Nació en un parque.<br />
-            <span className="text-accent">Creció en una academia.</span>
-          </h2>
-        </div>
-
-        {/* image + stats */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-20">
+        {/* image + copy + stats */}
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-16">
           <div className="relative rounded-[24px] overflow-hidden aspect-[4/3]">
             <img src={murph} alt="TS Calisthenics" className="w-full h-full object-cover object-center" />
             <div className="absolute inset-0 bg-gradient-to-t from-bg/80 via-transparent to-transparent" />
@@ -42,7 +34,6 @@ export default function Historia() {
               Hoy somos una academia con identidad propia, coaches que compiten y entrenan con vos, y una comunidad que empuja a cada atleta a superar su versión anterior.
             </p>
 
-            {/* stats grid */}
             <div className="grid grid-cols-2 gap-3 mt-auto">
               {stats.map(s => (
                 <div key={s.label} className="bg-surface border border-border rounded-[16px] p-5">
@@ -56,17 +47,13 @@ export default function Historia() {
 
         {/* timeline */}
         <div className="relative">
-          {/* vertical line */}
           <div className="absolute left-[19px] top-2 bottom-2 w-px bg-border hidden md:block" />
-
           <div className="space-y-6">
             {hitos.map(h => (
               <div key={h.year} className="flex gap-6 items-start">
-                {/* dot */}
-                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-surface border-2 border-accent flex items-center justify-center hidden md:flex">
+                <div className="flex-shrink-0 w-10 h-10 rounded-full bg-surface border-2 border-accent items-center justify-center hidden md:flex">
                   <span className="w-2 h-2 rounded-full bg-accent" />
                 </div>
-
                 <div className="bg-surface border border-border rounded-[16px] p-6 flex-1">
                   <div className="flex items-center gap-3 mb-2">
                     <span className="font-display text-[22px] text-accent leading-none">{h.year}</span>
@@ -80,6 +67,6 @@ export default function Historia() {
         </div>
 
       </div>
-    </section>
+    </div>
   )
 }

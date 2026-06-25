@@ -2,7 +2,7 @@ import logo from '../../assets/logo.jpg'
 
 export default function CtaFinal() {
   return (
-    <section id="cta" className="snap-start h-screen w-screen overflow-y-auto flex flex-col justify-between py-16">
+    <section id="cta" className="py-16 flex flex-col justify-between min-h-screen">
       {/* CTA card */}
       <div className="max-w-6xl mx-auto px-6 w-full flex-1 flex items-center">
         <div className="w-full bg-surface border border-border rounded-[28px] px-8 py-16 text-center relative overflow-hidden">

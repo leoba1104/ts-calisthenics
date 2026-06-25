@@ -65,7 +65,7 @@ function QRCode() {
 
 export default function AppSection() {
   return (
-    <section id="app" className="snap-start h-screen w-screen overflow-y-auto flex flex-col justify-center py-12">
+    <section id="app" className="py-24">
       <div className="max-w-6xl mx-auto px-6">
         <div className="bg-surface border border-border rounded-[28px] px-10 py-14 grid grid-cols-1 md:grid-cols-[1fr_auto] gap-12 items-center relative overflow-hidden">
           {/* glow */}
