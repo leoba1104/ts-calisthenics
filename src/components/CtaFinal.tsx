@@ -41,7 +41,7 @@ export default function CtaFinal() {
       <footer className="max-w-6xl mx-auto px-6 w-full py-4 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-3">
         <div className="flex items-center gap-2.5">
           <img src={logo} alt="TS Calisthenics" className="w-6 h-6 rounded-md object-cover" />
-          <span className="text-muted text-[13px]">© 2025 TS Calisthenics Academy</span>
+          <span className="text-muted text-[13px]">© 2026 TS Calisthenics Academy</span>
         </div>
         <nav className="flex gap-6">
           {['Instagram', 'TikTok', 'Contacto'].map(l => (

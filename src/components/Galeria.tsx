@@ -1,7 +1,14 @@
 import ThumbnailCarousel from '@/components/ui/thumbnail-carousel'
 import type { CarouselItem } from '@/components/ui/thumbnail-carousel'
+import videoClip from '../../assets/IMG_8438.MOV'
 
 const photos: CarouselItem[] = [
+  {
+    id: 0,
+    url: videoClip,
+    title: 'Entrenamiento en acción',
+    type: 'video',
+  },
   {
     id: 1,
     url: 'https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?w=880&h=600&fit=crop',

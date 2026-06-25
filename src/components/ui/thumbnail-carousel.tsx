@@ -5,6 +5,7 @@ export interface CarouselItem {
   id: number
   url: string
   title: string
+  type?: 'image' | 'video'
 }
 
 const FULL_WIDTH_PX = 120
@@ -58,12 +59,28 @@ function Thumbnails({
             transition={{ duration: 0.3, ease: 'easeOut' }}
             className="relative shrink-0 h-full overflow-hidden rounded"
           >
-            <img
-              src={item.url}
-              alt={item.title}
-              className="w-full h-full object-cover pointer-events-none select-none"
-              draggable={false}
-            />
+            {item.type === 'video' ? (
+              <>
+                <video
+                  src={item.url}
+                  className="w-full h-full object-cover pointer-events-none select-none"
+                  muted
+                  playsInline
+                />
+                <div className="absolute inset-0 flex items-center justify-center bg-black/40">
+                  <svg className="w-4 h-4 text-white drop-shadow" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M8 5v14l11-7z" />
+                  </svg>
+                </div>
+              </>
+            ) : (
+              <img
+                src={item.url}
+                alt={item.title}
+                className="w-full h-full object-cover pointer-events-none select-none"
+                draggable={false}
+              />
+            )}
           </motion.button>
         ))}
       </div>
@@ -76,6 +93,8 @@ export default function ThumbnailCarousel({ items }: { items: CarouselItem[] }) 
   const [isDragging, setIsDragging] = useState(false)
   const containerRef = useRef<HTMLDivElement>(null)
   const x = useMotionValue(0)
+
+  const currentIsVideo = items[index]?.type === 'video'
 
   useEffect(() => {
     if (!isDragging && containerRef.current) {
@@ -90,7 +109,7 @@ export default function ThumbnailCarousel({ items }: { items: CarouselItem[] }) 
       <div className="relative overflow-hidden rounded-2xl bg-surface2" ref={containerRef}>
         <motion.div
           className="flex"
-          drag="x"
+          drag={currentIsVideo ? false : 'x'}
           dragElastic={0.2}
           dragMomentum={false}
           onDragStart={() => setIsDragging(true)}
@@ -111,12 +130,22 @@ export default function ThumbnailCarousel({ items }: { items: CarouselItem[] }) 
         >
           {items.map(item => (
             <div key={item.id} className="shrink-0 w-full h-[480px]">
-              <img
-                src={item.url}
-                alt={item.title}
-                className="w-full h-full object-cover rounded-2xl select-none pointer-events-none"
-                draggable={false}
-              />
+              {item.type === 'video' ? (
+                <video
+                  src={item.url}
+                  className="w-full h-full object-cover rounded-2xl"
+                  controls
+                  playsInline
+                  onPointerDown={e => e.stopPropagation()}
+                />
+              ) : (
+                <img
+                  src={item.url}
+                  alt={item.title}
+                  className="w-full h-full object-cover rounded-2xl select-none pointer-events-none"
+                  draggable={false}
+                />
+              )}
             </div>
           ))}
         </motion.div>
@@ -152,10 +181,12 @@ export default function ThumbnailCarousel({ items }: { items: CarouselItem[] }) 
           {index + 1} / {items.length}
         </div>
 
-        {/* Caption */}
-        <div className="absolute bottom-4 left-4 right-20">
-          <p className="text-white/80 text-[13px] font-medium drop-shadow">{items[index].title}</p>
-        </div>
+        {/* Caption — hide when video (has its own controls) */}
+        {!currentIsVideo && (
+          <div className="absolute bottom-4 left-4 right-20">
+            <p className="text-white/80 text-[13px] font-medium drop-shadow">{items[index].title}</p>
+          </div>
+        )}
       </div>
 
       <Thumbnails items={items} index={index} setIndex={setIndex} />
