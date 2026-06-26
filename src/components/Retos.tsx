@@ -150,9 +150,9 @@ export default function Retos() {
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
           {retos.map(r => (
-            <div key={r.title} className={r.featured ? 'lg:col-span-2' : ''}>
+            <div key={r.title}>
               <RetoCard r={r} />
             </div>
           ))}
