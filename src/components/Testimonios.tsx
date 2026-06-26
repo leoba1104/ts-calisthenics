@@ -1,5 +1,3 @@
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar'
-import { Card, CardContent } from '@/components/ui/card'
 import { Marquee } from '@/components/ui/3d-testimonails'
 
 const testimonials = [
@@ -48,52 +46,55 @@ const testimonials = [
   {
     name: 'Daniela G.',
     username: '@dani_g',
-    body: 'La app para reservar clases es una genia. En 10 segundos tenés tu lugar.',
+    body: 'En 3 meses aprendí el handstand. La técnica que te dan acá no la encontrás en otro lado.',
     img: 'https://randomuser.me/api/portraits/women/53.jpg',
   },
   {
     name: 'Camila T.',
     username: '@cami_t',
-    body: 'Aprendí a hacer handstand en 3 meses. Técnica impecable de los profes.',
+    body: 'Comunidad increíble. Llegás solo y salís con un grupo que te empuja cada clase.',
     img: 'https://randomuser.me/api/portraits/women/12.jpg',
+  },
+  {
+    name: 'Lucas M.',
+    username: '@lucas_m',
+    body: 'El Front Lever era un sueño. Con Yurguen en 4 meses lo hice. Método real.',
+    img: 'https://randomuser.me/api/portraits/men/44.jpg',
   },
 ]
 
-function TestimonialCard({
-  img,
-  name,
-  username,
-  body,
-}: (typeof testimonials)[number]) {
+function TestimonialCard({ img, name, username, body }: (typeof testimonials)[0]) {
   return (
-    <Card className="w-52 border-border bg-surface">
-      <CardContent className="p-4">
-        <div className="flex items-center gap-2.5">
-          <Avatar className="size-9">
-            <AvatarImage src={img} alt={name} />
-            <AvatarFallback>{name[0]}</AvatarFallback>
-          </Avatar>
-          <div className="flex flex-col">
-            <figcaption className="text-sm font-semibold text-white leading-tight">
-              {name}
-            </figcaption>
-            <p className="text-xs text-muted">{username}</p>
-          </div>
+    <figure className="w-72 flex-shrink-0 mx-2 bg-surface border border-border rounded-[18px] p-5 select-none">
+      <div className="flex gap-[3px] mb-3">
+        {[1, 2, 3, 4, 5].map(i => (
+          <span key={i} className="text-accent text-[13px] leading-none">★</span>
+        ))}
+      </div>
+      <blockquote className="text-[14px] leading-relaxed text-white/80 mb-4">
+        "{body}"
+      </blockquote>
+      <div className="flex items-center gap-2.5">
+        <img
+          src={img}
+          alt={name}
+          className="w-8 h-8 rounded-full object-cover flex-shrink-0"
+        />
+        <div>
+          <p className="text-[13px] font-semibold text-white leading-tight">{name}</p>
+          <p className="text-[11px] text-muted">{username}</p>
         </div>
-        <div className="flex gap-0.5 mt-2.5 mb-1">
-          {[1,2,3,4,5].map(i => (
-            <span key={i} className="text-accent text-[11px]">★</span>
-          ))}
-        </div>
-        <blockquote className="mt-1 text-[13px] leading-snug text-white/60">{body}</blockquote>
-      </CardContent>
-    </Card>
+      </div>
+    </figure>
   )
 }
 
+const firstRow  = testimonials.slice(0, 5)
+const secondRow = testimonials.slice(5)
+
 export default function Testimonios() {
   return (
-    <section className="py-20 lg:py-28">
+    <section className="py-20 lg:py-28 overflow-hidden">
       <div className="max-w-6xl mx-auto px-6 mb-12">
         <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-3">
           <h2 className="font-display text-[clamp(38px,5vw,64px)] leading-[1] uppercase tracking-tight">
@@ -103,37 +104,14 @@ export default function Testimonios() {
         </div>
       </div>
 
-      {/* 3D marquee container */}
-      <div className="relative flex h-96 w-full items-center justify-center overflow-hidden [perspective:300px]">
-        <div
-          className="flex flex-row items-center gap-4"
-          style={{
-            transform:
-              'translateX(-100px) translateY(0px) translateZ(-100px) rotateX(20deg) rotateY(-10deg) rotateZ(20deg)',
-          }}
-        >
-          <Marquee vertical pauseOnHover repeat={3} className="[--duration:40s]">
-            {testimonials.map(r => <TestimonialCard key={r.username} {...r} />)}
-          </Marquee>
+      <div className="space-y-3">
+        <Marquee pauseOnHover className="[--duration:40s]">
+          {firstRow.map(r => <TestimonialCard key={r.username} {...r} />)}
+        </Marquee>
 
-          <Marquee vertical pauseOnHover reverse repeat={3} className="[--duration:40s]">
-            {testimonials.map(r => <TestimonialCard key={r.username} {...r} />)}
-          </Marquee>
-
-          <Marquee vertical pauseOnHover repeat={3} className="[--duration:40s]">
-            {testimonials.map(r => <TestimonialCard key={r.username} {...r} />)}
-          </Marquee>
-
-          <Marquee vertical pauseOnHover reverse repeat={3} className="[--duration:40s]">
-            {testimonials.map(r => <TestimonialCard key={r.username} {...r} />)}
-          </Marquee>
-
-          {/* gradient overlays */}
-          <div className="pointer-events-none absolute inset-x-0 top-0 h-1/4 bg-gradient-to-b from-bg" />
-          <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/4 bg-gradient-to-t from-bg" />
-          <div className="pointer-events-none absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-bg" />
-          <div className="pointer-events-none absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-bg" />
-        </div>
+        <Marquee reverse pauseOnHover className="[--duration:45s]">
+          {secondRow.map(r => <TestimonialCard key={r.username} {...r} />)}
+        </Marquee>
       </div>
     </section>
   )

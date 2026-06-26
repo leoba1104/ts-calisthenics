@@ -6,7 +6,7 @@ const links = [
   { label: 'Galería',   href: '#galeria' },
   { label: 'Retos',     href: '#retos' },
   { label: 'Coaches',   href: '#coaches' },
-  { label: 'App',       href: '#app' },
+  { label: 'Programas', href: '#programas' },
   { label: 'Horarios',  href: '#horarios' },
 ]
 

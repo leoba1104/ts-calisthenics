@@ -16,10 +16,10 @@ export default function App() {
       <Nav />
       <Hero />
       <Historia />
+      <Galeria />
       <Retos />
       <Coaches />
       <Programas />
-      <Galeria />
       <Horarios />
       <Testimonios />
       <CtaFinal />
