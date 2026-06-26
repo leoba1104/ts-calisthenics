@@ -3,6 +3,7 @@ import Hero           from './components/Hero'
 import Historia       from './components/Historia'
 import Retos          from './components/Retos'
 import Coaches        from './components/Coaches'
+import Programas      from './components/Programas'
 import Galeria        from './components/Galeria'
 import Horarios       from './components/Horarios'
 import Testimonios    from './components/Testimonios'
@@ -17,8 +18,9 @@ export default function App() {
       <Historia />
       <Retos />
       <Coaches />
+      <Programas />
       <Galeria />
-<Horarios />
+      <Horarios />
       <Testimonios />
       <CtaFinal />
       <WhatsAppBubble />
