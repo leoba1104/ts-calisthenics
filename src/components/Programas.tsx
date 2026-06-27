@@ -37,7 +37,7 @@ const planes = [
       'Acceso de por vida a actualizaciones',
     ],
     cta: 'Comprar ahora',
-    ctaHref: '#',
+    ctaHref: 'https://pay.hotmart.com/G106512083P',
     accent: true,
   },
   {
